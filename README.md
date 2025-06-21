@@ -35,10 +35,12 @@ The project is can assist farmers and agricultural researchers by automating the
 ---
 
 ##Project Structure
-AI-PlantGuard/
+
+AI-PlantGuard
+
 -static                # Static files (CSS, images, icons)
 -templates             # HTML templates (home, result)
-- app.py               # Flask web server script
+-app.py               # Flask web server script
 -train_model.ipynb     # Jupyter Notebook for model training
 - dataset              # Training dataset (external link: Kaggle)
 - README.md            # Project documentation
