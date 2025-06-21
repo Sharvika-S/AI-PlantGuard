@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    
+    
+    
+    <header>
+        
+        <div class="header-top">
+            <!-- Logo at top-left -->
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo" />
+            </a>
+
+            
+        </div>
+
+    <nav class="navbar">
+        <div class="header-top">
+            <!-- Logo at top-left -->
+            <a href="/" class="logo-link">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo" />
+            </a>
+
+            
+        </div>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/feedback">Feedback</a></li>
+            <li><a href="https://www.bighaat.com/" target="_blank">Buy Products</a></li>
+        </ul>
+    </nav>
+    <div class="ai-intro-text">
+  <h1>Empowering Farmers with AI</h1>
+  <p>
+    Upload plant images to instantly identify diseases, receive actionable insights, and protect your crops with cutting-edge AI technology.
+  </p>
+  <p>
+    Our automated plant disease detection system uses advanced vision algorithms to classify plant health from a single image  enabling faster decisions, higher yields, and sustainable farming like never before.
+  </p>
+</div>
+
+    </header>
+
+    <!-- Predict Here Button -->
+     <a href="#predict-section">
+    <button class="predict-button">
+        Predict Here <span class="arrow">↓</span>
+    </button>
+</a>
+
+    <div class="carousel-container">
+  
+
+  <div class="carousel-track">
+    
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/nutrient_deficiency.jpg') }}" alt="Nutrient deficiency">
+      <div class="label">Nutrient deficiency</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/bacterial.jpg') }}" alt="Bacterial diseases">
+      <div class="label">Bacterial diseases</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/fungal.jpg') }}" alt="Fungal diseases">
+      <div class="label">Fungal diseases</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/viral.jpg') }}" alt="Viral diseases">
+      <div class="label">Viral diseases</div>
+    </div>
+    <div class="carousel-item">
+      <img src="{{ url_for('static', filename='images/pests.jpg') }}" alt="Pests">
+      <div class="label">Pests</div>
+    </div>
+    <!-- Add more items if needed -->
+  </div>
+
+  
+</div>
+
+
+
+    <div class="container" id="predict-section">
+        <h2>Disease Identifier: Predict here</h2>
+        
+        <div class="upload-section">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <label for="file-upload" class="custom-file-upload">
+                    Choose File
+                </label>
+                <input id="file-upload" type="file" name="file">
+                <button type="submit">Upload & Predict</button>
+            </form>
+            {% if error %}
+            <p class="error-message">{{ error }}</p>
+            {% endif %}
+            <div class="image-preview">
+                {% if image_url %}
+                <img src="{{ image_url }}" alt="Uploaded Image">
+                <p>Image uploaded successfully!</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div style="color: white;">
+    {% if result %}
+        <h3>Prediction Result:</h3>
+        <p>{{ result }}</p>
+        <p><strong>Confidence: </strong>{{ confidence }}</p>
+    {% endif %}
+
+    {% if cause %}
+        <h3>Cause:</h3>
+        <p>{{ cause | safe }}</p>
+    {% endif %}
+
+    {% if suggestion %}
+        <h3>Suggestions:</h3>
+        <p>{{ suggestion | safe }}</p>
+    {% endif %}
+
+    {% if cure %}
+        <h3>Cure:</h3>
+        <p>{{ cure | safe }}</p>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+</div>
+
+    </div> update full code
+ 
+</body>
+</html>
