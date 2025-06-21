@@ -11,7 +11,7 @@ The project is can assist farmers and agricultural researchers by automating the
 -  Upload plant leaf images via an easy-to-use web interface
 -  Real-time prediction using a trained deep learning CNN model
 -  Trained on a Kaggle dataset with 80,000+ labeled images across 38 plant disease categories
--  Model built and evaluated in Jupyter Notebook using Keras and TensorFlow
+-  Model built and evaluated in Google colab using Keras and TensorFlow
 -  Modular structure separating training, backend, and web frontend
 -  Fast and lightweight Flask backend
 
