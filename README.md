@@ -33,15 +33,33 @@ The project is can assist farmers and agricultural researchers by automating the
 | `numpy` | Numerical operations on image arrays |
 | `matplotlib` | Plotting model accuracy/loss graphs |
 ---
+
 ##Project Structure
 AI-PlantGuard/
-├── static/                # Static files (CSS, images, icons)
-├── templates/             # HTML templates (home, result)
-├── app.py                 # Flask web server script
-├── train_model.ipynb      # Jupyter Notebook for model training
-├── dataset/               # Training dataset (external link: Kaggle)
-└── README.md              # Project documentation
+-static/                # Static files (CSS, images, icons)
+-templates/             # HTML templates (home, result)
+- app.py                 # Flask web server script
+-train_model.ipynb      # Jupyter Notebook for model training
+- dataset/               # Training dataset (external link: Kaggle)
+- README.md              # Project documentation
 
 ----
-<img src="static/home_page.png" width="600"/>
-<img src="static/result_page.png" width="600"/>
+## 📸 Screenshots
+
+Below are the interface screenshots of the web application:
+
+1. **Home Page**
+   - ![Home Page](static/home_page.png)
+
+2. **Alternate Home Page View**
+   - ![Home Page 1](static/home_page_1.png)
+
+3. **Prediction Interface**
+   - ![Prediction Page](static/prediction.png)
+
+4. **Feedback Form**
+   - ![Feedback Page](static/feedback.png)
+
+5. **Contact Us Page**
+   - ![Contact Us](static/Contact-Us%20.png)
+
